@@ -27,4 +27,8 @@ ORDER BY birthday ASC LIMIT 1;
 --Q11
 SELECT count(*) AS num_user FROM ACCOUNT ,(SELECT count(*) AS num_rating, uid FROM RATING GROUP BY uid) AS T
 WHERE Account_id = T.uid AND T.num_rating = 1 AND Job IS NOT NULL;
---Q12
+--Q12 모든 배우를 대상으로 작업한 모든 영상물의 평균 평점이 8 점 이상인 배우의 이름은 무엇인가?
+
+--Q13 
+
+
