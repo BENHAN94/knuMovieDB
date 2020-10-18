@@ -19,11 +19,11 @@ DROP TABLE Actor_of CASCADE;
 
 CREATE TABLE Movie(
 	Movie_id SERIAL PRIMARY KEY,
-	Original_title VARCHAR(100) NOT NULL,
-	Primary_title VARCHAR(100) NOT NULL,
-	Running_time NUMERIC(4,0),
-	Start_year NUMERIC(4,0) NOT NULL,
-	End_year NUMERIC(4,0), 
+	Original_title VARCHAR(200) NOT NULL,
+	Primary_title VARCHAR(200),
+	Running_time NUMERIC(5,0),
+	Start_year DATE,
+	End_year DATE, 
 	Type VARCHAR(20) NOT NULL,
 	Is_adult BOOLEAN NOT NULL,
 	Rating NUMERIC(3,1)
@@ -76,16 +76,16 @@ CREATE TABLE Playing_in(
 CREATE TABLE Episode(
 	mid SERIAL NOT NULL,
 	pid SERIAL NOT NULL,
-	Episode_number INTEGER NOT NULL,
-	Episode_season INTEGER NOT NULL,
+	Episode_number INTEGER,
+	Episode_season INTEGER,
 	PRIMARY KEY (mid, pid)
 );
 
 CREATE TABLE Version(
 	Version_id SERIAL NOT NULL PRIMARY KEY,
-	Version_title VARCHAR(100) NOT NULL,
-	Region VARCHAR(20),
-	Language VARCHAR(20),
+	Version_title VARCHAR(200) NOT NULL,
+	Region VARCHAR(50),
+	Language VARCHAR(50),
 	mid SERIAL NOT NULL
 );
 
