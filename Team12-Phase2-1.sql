@@ -14,7 +14,6 @@ DROP TABLE Account CASCADE;
 DROP TABLE Rating CASCADE;
 DROP TABLE Admin CASCADE;
 DROP TABLE Membership CASCADE;
-DROP TABLE Subscribe CASCADE;
 DROP TABLE Actor_of CASCADE;
 
 CREATE TABLE Movie(
@@ -99,7 +98,8 @@ CREATE TABLE Account(
 	Password VARCHAR(50) NOT NULL,
 	Phone VARCHAR(20),
 	Address VARCHAR(100),
-	Job VARCHAR(100)
+	Job VARCHAR(100),
+	sid NUMERIC(1,0) NOT NULL
 );
 
 CREATE TABLE Rating(
@@ -114,14 +114,7 @@ CREATE TABLE Admin(
 );
 
 CREATE TABLE Membership(
-	Membership_title VARCHAR(10) NOT NULL PRIMARY KEY
+	Membership_id SERIAL NOT NULL PRIMARY KEY,
+	Membership_name VARCHAR(10) NOT NULL
 );
-
-CREATE TABLE Subscribe(
-	email VARCHAR(100) NOT NULL,
-	mem VARCHAR(10) NOT NULL,
-	PRIMARY KEY (email, mem)
-);
-
-
 
