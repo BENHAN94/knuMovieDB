@@ -1,5 +1,5 @@
 
-Mapping Note
+# Mapping Note
 
 1. MOVIE and GENRE
 
@@ -23,23 +23,28 @@ Mapping Note
  - EPISODE.mid: An episode of a series
  - EPISODE.pid: A series of which an episode is 
 
-5. MOVIE and RATING
+5. MOVIE and DIRECTOR
+
+ - MOVIE.Movie_id = DIRECTOR_OF.mid
+ - DIRECTOR.Director_id = DIRECTOR_OF.did
+
+6. MOVIE and RATING
 
  - MOVIE.Movie_id = RATING.mid
 
-6. RATING and ACCOUNT
+7. RATING and ACCOUNT
 
  - ACCOUNT.Account_id = Rating.uid
 
-7. ACCOUNT and MEMBERSHIP
+8. ACCOUNT and MEMBERSHIP
 
  - MEMBERSHIP.Membership_id = ACCOUNT.sid
 
-8. ACCOUNT and ACCOUNT as ADMIN
+9. ACCOUNT and ACCOUNT as ADMIN
 
  - ACCOUNT.Account_id = ADMIN.uid
 
-ER Schema 수정사항
+# ER Schema 수정사항
 
 1. Entity
 
@@ -53,9 +58,9 @@ ER Schema 수정사항
 - DIRECTOR_OF added between MOVIE and DIRECTOR 
 - APPEAR_IN deleted which was between MOVIE and CHARACTER
 - PLAY deleted which was between ACTOR and CHARACTER
-- ACTOR_OF added between MOVIE and ACTOR
+- OF added between MOVIE and ACTOR
 - Relation between EPISODE and VERSION deleted
-- PROVIDE changed into VERSION_OF 
+- PROVIDE changed into OF 
  
 3. Attribute
  
