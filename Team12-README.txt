@@ -14,5 +14,7 @@
 
  - In terminal "psql -d 'db Name' -f 'file name'"
  - ex) $psql -d knuMovie -f "Team12-phase2-1.sql
+ 
+ 
 
 
