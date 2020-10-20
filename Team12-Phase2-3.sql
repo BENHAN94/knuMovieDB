@@ -1,4 +1,6 @@
 
+-- Queries
+
 --Q1
 SELECT count(*) AS num_account FROM ACCOUNT;
 
@@ -81,5 +83,6 @@ SELECT M.Rating FROM MOVIE AS M,
 WHERE M.Movie_id = m2id 
 AND M.Movie_id = m3id AND num_version >= 5 AND num_version <= 10 AND num_actor <= 5 AND M.Movie_id = T3.Movie_id;
 --Q19
+select original_title from movie,(select mid, running_time from movie, (select (ROW_NUMBER() OVER(ORDER BY rate DESC)) as ROW,* from (select mid, rating as rate from movie, actor_of as A,(select aid, Max(rating) from movie,actor_of,actor where mid=movie_id AND aid=actor_id group by aid) as T1 where mid=movie_id AND A.aid= T1.aid) as T2) as T3 where T3.ROW =2 AND T3.mid = movie_id) as T4 where T4.mid= movie_id;
 --Q20 
-
+select First_name,Last_name from account,(select start_year from movie,(select movie_id, count(uid) as G from rating, movie,genre_of,(select gen from genre_of,(select mid, Max(T4.B) as F from (select mid, count(uid) as B from rating,(select movie_id,account_id from account,rating,movie,(select T1.movie_id as T1M, MAX(T1.C) as M from(select movie_id, count(uid) as C from rating,movie,account where sex='Female' AND account_id = uid AND movie_id = mid group by movie_id) as T1  group by movie_id order by M desc) as T2 where sex='Male' AND uid= account_id AND mid = movie_id AND movie_id = T2.T1M)as T3 where T3.account_id=uid AND mid = T3.movie_id group by mid) as T4 group by mid order by F desc limit 1) as T5 where genre_of.mid = T5.mid) as T6 where T6.gen = genre_of.gen AND genre_of.mid = movie_id AND rating.mid=movie_id group by movie_id order by G asc limit 1) as T7 where movie.movie_id = T7.movie_id) as T8 where account.birthday = T8.start_year;
