@@ -1,6 +1,43 @@
 
+Mapping Note
 
+1. MOVIE and GENRE
 
+ - MOVIE.Movie_id = GENRE_OF.mid
+ - GENRE.gen = GENRE_OF.gen
+
+2. MOVIE and ACTOR
+
+ - MOVIE.Movie_id = ACTOR_OF.mid
+ - ACTOR.Actor_id = ACTOR_OF.aid 
+ - ACTOR_OF.Character defines a character of an actor in a movie
+
+3. MOVIE and VERSION
+
+ - MOVIE.Movie_id = VERSION.mid 
+
+4. MOVIE and EPISODE
+
+ - MOVIE.Movie_id = EPISODE.mid
+ - MOVIE.Movie_id = EPISODE.pid 
+ - EPISODE.mid: An episode of a series
+ - EPISODE.pid: A series of which an episode is 
+
+5. MOVIE and RATING
+
+ - MOVIE.Movie_id = RATING.mid
+
+6. RATING and ACCOUNT
+
+ - ACCOUNT.Account_id = Rating.uid
+
+7. ACCOUNT and MEMBERSHIP
+
+ - MEMBERSHIP.Membership_id = ACCOUNT.sid
+
+8. ACCOUNT and ACCOUNT as ADMIN
+
+ - ACCOUNT.Account_id = ADMIN.uid
 
 ER Schema 수정사항
 
@@ -16,7 +53,9 @@ ER Schema 수정사항
 - DIRECTOR_OF added between MOVIE and DIRECTOR 
 - APPEAR_IN deleted which was between MOVIE and CHARACTER
 - PLAY deleted which was between ACTOR and CHARACTER
-- PLAYING_IN added between MOVIE and ACTOR
+- ACTOR_OF added between MOVIE and ACTOR
+- Relation between EPISODE and VERSION deleted
+- PROVIDE changed into VERSION_OF 
  
 3. Attribute
  
