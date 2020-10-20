@@ -18,9 +18,7 @@
 
 4. MOVIE and EPISODE
 
- - MOVIE.Movie_id = EPISODE.mid
  - MOVIE.Movie_id = EPISODE.pid 
- - EPISODE.mid: An episode of a series
  - EPISODE.pid: A series of which an episode is 
 
 5. MOVIE and RATING
@@ -83,8 +81,9 @@
 	- Location changed into Region
 
  5) EPISODE
- 	- Episode_name deleted
+ 	- Episode_name changed into Episode_title
 	- Episode_season added
+
 
  6) RATING
  	- Rating changed into Single_rating
