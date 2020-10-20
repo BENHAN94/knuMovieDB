@@ -99,7 +99,7 @@ CREATE TABLE Account(
 	Phone VARCHAR(20),
 	Address VARCHAR(100),
 	Job VARCHAR(100),
-	sid NUMERIC(1,0) NOT NULL
+	sid SERIAL NOT NULL
 );
 
 CREATE TABLE Rating(
