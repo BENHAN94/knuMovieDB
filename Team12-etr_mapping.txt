@@ -23,24 +23,19 @@
  - EPISODE.mid: An episode of a series
  - EPISODE.pid: A series of which an episode is 
 
-5. MOVIE and DIRECTOR
-
- - MOVIE.Movie_id = DIRECTOR_OF.mid
- - DIRECTOR.Director_id = DIRECTOR_OF.did
-
-6. MOVIE and RATING
+5. MOVIE and RATING
 
  - MOVIE.Movie_id = RATING.mid
 
-7. RATING and ACCOUNT
+6. RATING and ACCOUNT
 
  - ACCOUNT.Account_id = Rating.uid
 
-8. ACCOUNT and MEMBERSHIP
+7. ACCOUNT and MEMBERSHIP
 
  - MEMBERSHIP.Membership_id = ACCOUNT.sid
 
-9. ACCOUNT and ACCOUNT as ADMIN
+8. ACCOUNT and ACCOUNT as ADMIN
 
  - ACCOUNT.Account_id = ADMIN.uid
 
@@ -50,12 +45,11 @@
 
 - ADMIN added
 - CHARACTER deleted
-- DIRECTOR added
+
 
 2. Relation
 
 - ADMIN added between ACCOUNT and ACCOUNT relationship
-- DIRECTOR_OF added between MOVIE and DIRECTOR 
 - APPEAR_IN deleted which was between MOVIE and CHARACTER
 - PLAY deleted which was between ACTOR and CHARACTER
 - OF added between MOVIE and ACTOR
@@ -106,12 +100,7 @@
  	- Membership_title changed into Membership_name NOT PRIMARY KEY
 	- Membership_id added as PRIMARY KEY
 
- 9) DIRECTOR
- 	- Director_id added as PRIMARY KEY
-	- Director_name added
-	- Birth_year added
-	- Death_year added
-
+ 
 
 
 
