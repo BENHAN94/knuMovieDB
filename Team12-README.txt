@@ -15,8 +15,4 @@
  - In terminal "psql -d 'db Name' -f 'file name'"
  - ex) $psql -d knuMovie -f "Team12-phase2-1.sql
 
-# Extra file
-
- - Team12-Phase2-3-1.sql: Query Q12 changed. Limited version.
-   Since the number of Q12's result is too big, this file contains query of Q12 with limited number by 10.
 
